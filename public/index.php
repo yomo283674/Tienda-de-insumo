@@ -406,7 +406,7 @@
                     </li>
                 </ul>
                 <div class="d-flex mt-3 mt-lg-0 align-items-center justify-content-center">
-                    <a href="login.php" class="btn btn-nav-login shadow-sm">Iniciar Sesión</a>
+                    <a href="../views/auth/login.php" class="btn btn-nav-login shadow-sm">Iniciar Sesión</a>
                 </div>
             </div>
         </div>
@@ -426,7 +426,7 @@
                     <h1 class="hero-title">El futuro de tu gestión agrícola</h1>
                     <p class="hero-subtitle">Transforma la manera en que administras tus inventarios de insumos y ventas. Precisión, velocidad y control total en una plataforma SaaS diseñada a tu medida.</p>
                     <div class="d-flex flex-wrap gap-3">
-                        <a href="login.php" class="btn btn-primary-custom">
+                        <a href="../views/auth/login.php" class="btn btn-primary-custom">
                             Comenzar ahora <i class="bi bi-arrow-right ms-2 fw-bold"></i>
                         </a>
                     </div>
@@ -515,7 +515,7 @@
                         <li class="mb-3"><a href="#">Inicio</a></li>
                         <li class="mb-3"><a href="#soluciones">Soluciones</a></li>
                         <li class="mb-3"><a href="#">Beneficios</a></li>
-                        <li class="mb-3"><a href="login.php">Iniciar Sesión</a></li>
+                        <li class="mb-3"><a href="../views/auth/login.php">Iniciar Sesión</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-4 col-md-6 offset-lg-1">
