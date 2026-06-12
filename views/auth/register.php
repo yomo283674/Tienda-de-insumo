@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -15,6 +18,7 @@
         rel="stylesheet">
     <!-- Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         :root {
             --primary-color: #059669;
@@ -233,31 +237,14 @@
                 <p class="text-muted mb-4">Comienza a gestionar tu negocio agrícola de forma inteligente hoy mismo.</p>
             </div>
 
-            <form action="#" method="POST">
-                <div class="row g-3 mb-3">
-                    <div class="col-sm-6">
-                        <label for="nombre" class="form-label">Nombre</label>
-                        <div class="input-group">
-                            <span class="input-group-text bg-white border-end-0 text-muted"><i
-                                    class="bi bi-person"></i></span>
-                            <input type="text" class="form-control border-start-0 ps-0" id="nombre" name="nombre"
-                                placeholder="Ej. Juan" required>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <label for="apellidos" class="form-label">Apellidos</label>
-                        <input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Ej. Pérez"
-                            required>
-                    </div>
-                </div>
-
+            <form action="../../controllers/auth/registerController.php" method="POST" id="formRegister">
                 <div class="mb-3">
-                    <label for="empresa" class="form-label">Nombre del Negocio/Finca (Opcional)</label>
+                    <label for="nombre" class="form-label">Nombre Completo</label>
                     <div class="input-group">
                         <span class="input-group-text bg-white border-end-0 text-muted"><i
-                                class="bi bi-shop"></i></span>
-                        <input type="text" class="form-control border-start-0 ps-0" id="empresa" name="empresa"
-                            placeholder="Agroinsumos S.A.">
+                                class="bi bi-person"></i></span>
+                        <input type="text" class="form-control border-start-0 ps-0" id="nombre" name="nombre"
+                            placeholder="Ej. Juan Pérez" required>
                     </div>
                 </div>
 
@@ -309,6 +296,30 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <?php if (isset($_SESSION['success'])): ?>
+        <script>
+            Swal.fire({
+                title: "¡Éxito!",
+                text: "<?= $_SESSION['success'] ?>",
+                icon: "success",
+                draggable: true
+            });
+        </script>
+        <?php unset($_SESSION['success']); ?>
+    <?php endif; ?>
+
+    <?php if (isset($_SESSION['error'])): ?>
+        <script>
+            Swal.fire({
+                title: "Error",
+                text: "<?= $_SESSION['error'] ?>",
+                icon: "error",
+                draggable: true
+            });
+        </script>
+        <?php unset($_SESSION['error']); ?>
+    <?php endif; ?>
 </body>
 
 </html>

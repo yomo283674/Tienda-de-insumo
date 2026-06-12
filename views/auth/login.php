@@ -1,5 +1,9 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,15 +13,21 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
     <!-- Animate.css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         :root {
-            --primary-color: #059669; /* Verde Esmeralda */
+            --primary-color: #059669;
+            /* Verde Esmeralda */
             --primary-dark: #047857;
-            --accent-color: #fbbf24; /* Ámbar */
-            --text-main: #1e293b; /* Pizarra Oscuro */
+            --accent-color: #fbbf24;
+            /* Ámbar */
+            --text-main: #1e293b;
+            /* Pizarra Oscuro */
             --text-muted: #64748b;
             --bg-light: #f8fafc;
         }
@@ -34,29 +44,44 @@
             position: relative;
         }
 
-        h1, h2, h3, h4, h5, h6, .brand-logo {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .brand-logo {
             font-family: 'Outfit', sans-serif;
         }
 
         /* Background Shapes */
         .bg-shapes {
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             z-index: -1;
             overflow: hidden;
         }
+
         .shape-1 {
             position: absolute;
-            top: -20%; left: -10%;
-            width: 600px; height: 600px;
-            background: radial-gradient(circle, rgba(16,185,129,0.1) 0%, rgba(255,255,255,0) 70%);
+            top: -20%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
             border-radius: 50%;
         }
+
         .shape-2 {
             position: absolute;
-            bottom: -20%; right: -10%;
-            width: 800px; height: 800px;
-            background: radial-gradient(circle, rgba(251,191,36,0.08) 0%, rgba(255,255,255,0) 70%);
+            bottom: -20%;
+            right: -10%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(251, 191, 36, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
             border-radius: 50%;
         }
 
@@ -86,10 +111,10 @@
         .form-control {
             border-radius: 12px;
             padding: 14px 20px;
-            border: 1px solid rgba(0,0,0,0.1);
+            border: 1px solid rgba(0, 0, 0, 0.1);
             background-color: #f8fafc;
             font-size: 1rem;
-            transition: all 0.3s ease;
+            transition: all 0.1s ease;
         }
 
         .form-control:focus {
@@ -113,7 +138,7 @@
             border-radius: 12px;
             border: none;
             width: 100%;
-            transition: all 0.3s;
+            transition: all 0.1s;
             margin-top: 10px;
         }
 
@@ -144,15 +169,18 @@
             transition: all 0.3s ease;
             z-index: 2;
         }
+
         .back-link:hover {
             color: var(--primary-color);
             background: rgba(255, 255, 255, 1);
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(5, 150, 105, 0.15);
         }
+
         .back-link i {
             transition: transform 0.3s ease;
         }
+
         .back-link:hover i {
             transform: translateX(-4px);
         }
@@ -163,6 +191,7 @@
             font-weight: 600;
             transition: color 0.3s;
         }
+
         .text-accent:hover {
             color: var(--primary-dark);
         }
@@ -173,12 +202,15 @@
                 margin: 20px;
                 border-radius: 20px;
             }
+
             .back-link {
-                top: 20px; left: 20px;
+                top: 20px;
+                left: 20px;
             }
         }
     </style>
 </head>
+
 <body>
 
     <a href="../../public/index.php" class="back-link animate__animated animate__fadeIn">
@@ -203,8 +235,10 @@
             <div class="mb-4">
                 <label for="email" class="form-label">Correo Electrónico</label>
                 <div class="input-group">
-                    <span class="input-group-text bg-white border-end-0 text-muted"><i class="bi bi-envelope"></i></span>
-                    <input type="email" class="form-control border-start-0 ps-0" id="email" name="email" placeholder="tu@correo.com" required>
+                    <span class="input-group-text bg-white border-end-0 text-muted"><i
+                            class="bi bi-envelope"></i></span>
+                    <input type="email" class="form-control border-start-0 ps-0" id="email" name="email"
+                        placeholder="tu@correo.com" required>
                 </div>
             </div>
 
@@ -215,7 +249,8 @@
                 </div>
                 <div class="input-group">
                     <span class="input-group-text bg-white border-end-0 text-muted"><i class="bi bi-lock"></i></span>
-                    <input type="password" class="form-control border-start-0 ps-0" id="password" name="password" placeholder="••••••••" required>
+                    <input type="password" class="form-control border-start-0 ps-0" id="password" name="password"
+                        placeholder="••••••••" required>
                 </div>
             </div>
 
@@ -230,11 +265,37 @@
         </form>
 
         <div class="text-center mt-4">
-            <p class="text-muted mb-0">¿No tienes una cuenta? <a href="register.php" class="text-accent">Regístrate aquí</a></p>
+            <p class="text-muted mb-0">¿No tienes una cuenta? <a href="register.php" class="text-accent">Regístrate
+                    aquí</a></p>
         </div>
     </div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <?php if (isset($_SESSION['success'])): ?>
+        <script>
+            Swal.fire({
+                title: "¡Éxito!",
+                text: "<?= $_SESSION['success'] ?>",
+                icon: "success",
+                draggable: true
+            });
+        </script>
+        <?php unset($_SESSION['success']); ?>
+    <?php endif; ?>
+
+    <?php if (isset($_SESSION['error'])): ?>
+        <script>
+            Swal.fire({
+                title: "Error",
+                text: "<?= $_SESSION['error'] ?>",
+                icon: "error",
+                draggable: true
+            });
+        </script>
+        <?php unset($_SESSION['error']); ?>
+    <?php endif; ?>
 </body>
+
 </html>
